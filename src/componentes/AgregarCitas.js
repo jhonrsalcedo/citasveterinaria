@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import uuid from 'uuid';
 
 class AgregarCitas extends Component {
     state = {
-        nombreMascotaValue:'',
+            id: uuid(),
+            nombreMascotaValue:'',
             propietarioValue:'',
             fechaValue:'',
             horaValue:'',
@@ -11,6 +13,7 @@ class AgregarCitas extends Component {
       }
       HandleCrearNuevaCita =(e) =>{
         e.preventDefault();
+        
         const citasForm = this.state
         console.log(citasForm);
         // console.log(e.target.nombreMascotaValue.value)
