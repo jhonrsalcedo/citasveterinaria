@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import Header from './componentes/Header';
 import AgregarCitas from './componentes/AgregarCitas';
 class App extends Component {
-  state ={}
+  state ={
+    citas:[]
+  }
   //pasamos la funcion crearCita para AgregarCita para que esta se comunique y puedan pasar los datos del formulario
-  funcionCrearCita = ()=>{
-   
-    console.log("datos desde AgregarCitas");
+  funcionCrearCita = (crearCita)=>{
+      // console.log("datos desde AgregarCitas");
+    const citas = [...this.state.citas, crearCita]
+    console.log(citas);
+
+    this.setState({
+      citas
+    })
   }
   render() {
     return (
