@@ -3,6 +3,7 @@ import uuid from 'uuid';
 
 class AgregarCitas extends Component {
     state = {
+        error:false,
             id: uuid(),
             nombreMascotaValue:'',
             propietarioValue:'',
@@ -13,7 +14,11 @@ class AgregarCitas extends Component {
       }
       HandleCrearNuevaCita =(e) =>{
         e.preventDefault();
-        
+        if(this.state.nombreMascotaValue === '' || this.state.propietarioValue === '' || this.state.fechaValue === '' || this.state.horaValue === '' || this.state.sintomaValue === ''){
+            this.setState({
+                error:true
+            })
+           }else{  
         const citasForm = this.state
         // console.log(citasForm);
         // console.log(e.target.nombreMascotaValue.value)
@@ -21,13 +26,17 @@ class AgregarCitas extends Component {
         // se envia el objeto hacia el padre para que actualizar el state
         this.props.crearCita(citasForm);
 
-        this.setState({
-            nombreMascotaValue:'',
-            propietarioValue:'',
-            fechaValue:'',
-            horaValue:'',
-            sintomaValue:'', 
-        })
+            // reinicia el formulario
+            this.setState({
+                error:false,
+                nombreMascotaValue:'',
+                propietarioValue:'',
+                fechaValue:'',
+                horaValue:'',
+                sintomaValue:'', 
+            })
+           }
+    
     }
 
     HandleCitasInput = (e) =>{
@@ -36,7 +45,8 @@ class AgregarCitas extends Component {
             [e.target.name]: e.target.value
         })
     }
-    render() { 
+    render() {
+        const existeError =  this.state.error;
         return ( 
 
 
@@ -81,6 +91,7 @@ class AgregarCitas extends Component {
           </div>
       </div>
   </form>
+  {existeError ? <div className="alert alert-danger text-center">Todos los campos son obligatorio</div> : '' }
                 </div>
             </div>
          );
