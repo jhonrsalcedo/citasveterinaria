@@ -1,0 +1,19 @@
+import React, {Component} from 'react';
+
+export default class ListaCitas extends Component{
+    render(){
+        //pasamos del componente App padre a componente hijo(ListaCitas) por props para valicar si hay citas por medio de un object
+        const citas = this.props.citas;
+
+        const mensaje = Object.keys(citas).length === 0 ? "No hay citas" : "Administra tus citas aqui";
+        return(
+            <div className="card mt-5">
+                <div className="card-body">
+                <h4 className="card-title text-center">{mensaje}</h4>
+
+                </div>
+            
+            </div>
+        );
+    }
+}
