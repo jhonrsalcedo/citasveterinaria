@@ -20,7 +20,7 @@ class AgregarCitas extends Component {
             })
            }else{  
         const citasForm = this.state
-        // console.log(citasForm);
+    //    console.log(citasForm);
         // console.log(e.target.nombreMascotaValue.value)
 
         // se envia el objeto hacia el padre para que actualizar el state

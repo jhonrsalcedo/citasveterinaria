@@ -16,6 +16,22 @@ class App extends Component {
       citas
     })
   }
+  funcionBorrarCita = (id) =>{
+    console.log(id);
+    //obtener copia el state
+    const citasActuales = [...this.state.citas]
+
+    console.log("Antes..."); 
+    console.log(citasActuales); 
+
+    //borrar el elemento del state
+    const citas = citasActuales.filter(cita => cita.id !== id)
+    
+    console.log("Despues...");
+    console.log(citas)
+
+    //Actualizar el State
+  }
   render() {
     return (
      <div className="container">
@@ -31,6 +47,7 @@ class App extends Component {
         <div className="col-md-6">
           <ListaCitas
           citas={this.state.citas}
+          funcionBorrarCita={this.funcionBorrarCita}
           />
         </div>
       </div>
