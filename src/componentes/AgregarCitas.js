@@ -19,6 +19,15 @@ class AgregarCitas extends Component {
                 error:true
             })
            }else{  
+               this.setState({
+                error:false,
+                id: uuid(),
+                nombreMascotaValue:'',
+                propietarioValue:'',
+                fechaValue:'',
+                horaValue:'',
+                sintomaValue:'', 
+               })
         const citasForm = this.state
     //    console.log(citasForm);
         // console.log(e.target.nombreMascotaValue.value)
