@@ -10,7 +10,6 @@ class AgregarCitas extends Component {
             fechaValue:'',
             horaValue:'',
             sintomaValue:'', 
-
       }
       HandleCrearNuevaCita =(e) =>{
         e.preventDefault();
@@ -45,7 +44,6 @@ class AgregarCitas extends Component {
                 sintomaValue:'', 
             })
            }
-    
     }
 
     HandleCitasInput = (e) =>{

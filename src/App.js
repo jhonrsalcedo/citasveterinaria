@@ -31,6 +31,9 @@ class App extends Component {
     console.log(citas)
 
     //Actualizar el State
+    this.setState({
+      citas
+    });
   }
   render() {
     return (
