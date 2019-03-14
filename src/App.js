@@ -6,6 +6,36 @@ class App extends Component {
   state ={
     citas:[]
   }
+
+  // Ciclos de vida vida de los componentes y localstorage
+
+  componentDidMount(){
+    const citaLS = localStorage.getItem('citas');
+    if(citaLS){
+      this.setState({
+        citas: JSON.parse(citaLS)
+      })
+    }
+    console.log("Esta listo y montando");
+  }
+
+  // componentWillMount(){
+  //   console.log("Me ejecuto antes");
+  // }
+
+  // componentWillUnmount(){
+  //   console.log("Hasta que cierre el componenet");
+  // }
+
+  componentDidUpdate(){
+    localStorage.setItem(
+      'citas',
+      JSON.stringify(this.state.citas)
+    )
+    console.log('Se actualizo el componente ');
+  }
+  
+
   //pasamos la funcion crearCita para AgregarCita para que esta se comunique y puedan pasar los datos del formulario
   funcionCrearCita = (crearCita)=>{
       // console.log("datos desde AgregarCitas");

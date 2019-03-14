@@ -62,15 +62,15 @@ class AgregarCitas extends Component {
                 <h4 className="card-title text-center mb-4">Agrega las citas Aqui</h4>
                 <form onSubmit={this.HandleCrearNuevaCita}>
       <div className="form-group row">
-          <label className="col-sm-4 col-lg-2 col-form-label">Nombre Mascota</label>
+          <label className="col-sm-4 col-lg-2 col-form-label" htmlFor="nombreMascotaValue">Nombre Mascota</label>
           <div className="col-sm-8 col-lg-10">
-              <input type="text" className="form-control" placeholder="Nombre Mascota" name="nombreMascotaValue" onChange={this.HandleCitasInput} value={this.state.nombreMascotaValue}/>
+              <input type="text" className="form-control" placeholder="Nombre Mascota" name="nombreMascotaValue" id="nombreMascotaValue" onChange={this.HandleCitasInput} value={this.state.nombreMascotaValue}/>
           </div>
       </div>
       <div className="form-group row">
-          <label className="col-sm-4 col-lg-2 col-form-label">Nombre Dueño</label>
+          <label className="col-sm-4 col-lg-2 col-form-label" htmlFor="propietarioValue">Nombre Dueño</label>
           <div className="col-sm-8 col-lg-10">
-              <input type="text" className="form-control"  placeholder="Nombre Dueño de la Mascota" name="propietarioValue" onChange={this.HandleCitasInput} value={this.state.propietarioValue} />
+              <input type="text" className="form-control"  placeholder="Nombre Dueño de la Mascota" name="propietarioValue" id="propietarioValue" onChange={this.HandleCitasInput} value={this.state.propietarioValue} />
           </div>
       </div>
 
