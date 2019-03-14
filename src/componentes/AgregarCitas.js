@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import uuid from 'uuid';
+import PropTypes from 'prop-types';
 
 class AgregarCitas extends Component {
     state = {
@@ -104,5 +105,8 @@ class AgregarCitas extends Component {
          );
     }
 }
- 
+
+AgregarCitas.propTypes ={
+    crearCita : PropTypes.func.isRequired
+}
 export default AgregarCitas;
